@@ -1,11 +1,267 @@
 <!DOCTYPE html>
-<html lang="kr" layout:decorate="~{layout}" xmlns:th="http://www.thymeleaf.org">
+<html lang="kr" layout:decorate="~{layout}">
 
 <head>
 	<meta charset="UTF-8" />
 	<title>book page</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/bookmark_form.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/navbar.css}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+		integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-	<body>
-		<h1>북마크 페이지</h1>
-	</body>
+
+<body>
+	<div class="bookmarkWrap" layout:fragment="content">
+		<div class="bookmarkGroupBox">
+			<h4 class="groupTitle">북마크 그룹</h4>
+
+			<div class="groupAdd">
+				<button type="button" class="newGroup">+ 그룹추가</button>
+				<span class="groupAddIcon"><i class="fa-solid fa-gear" style="color: #829ac4;"></i></span>
+			</div>
+
+			<div class="groupListBox">
+				<ul class="groupList">
+					<li class="groupItem">기본 그룹</li>
+				</ul>
+			</div>
+
+
+			<div class="newGroupModal">
+				<div class="newModalTxt">
+					<h4 class="newTitle">새 그룹</h4>
+					<p class="deleteTxt">X</p>
+				</div>
+
+				<div class="newInpBox">
+					<input type="text" class="newInp" placeholder="그룹 명" />
+				</div>
+
+				<button type="button" class="newBtn">추가</button>
+			</div>
+
+
+			<div class="groupAddIconModal">
+				<h4 class="addTitle">그룹 설정</h4>
+				<input type="text" value="기본 그룹" />
+			</div>
+		</div>
+
+		<div class="boomarkFeed">
+			<div class="FeedTitleBox">
+				<h1>피드</h1>
+			</div>
+
+			<div class="FeedList">
+				<div class="FeedItem">
+					<h2 class="FeedCompany">삼성</h2>
+
+					<div class="FeedDetail">
+						<span class="DetailCompany">기업이름</span>
+						<h3 class="DetailTitle">제목제목제목제목제목제목제목제목제목제목</h3>
+						<span class="DeatailAgo">20분전</span>
+					</div>
+
+					<div class="FeedImgBox">
+						<img th:src="@{/images/동료.png}" alt="피드 이미지" />
+					</div>
+				</div>
+			</div>
+
+			<div class="FeedList">
+				<div class="FeedItem">
+					<div class="FeedCompany">
+						<h2>삼성</h2>
+					</div>
+
+					<div class="FeedDetail">
+						<span class="DetailCompany">기업이름</span>
+						<h3 class="DetailTitle">제목제목제목제목제목제목제목제목제목제목</h3>
+						<span class="DeatailAgo">20분전</span>
+					</div>
+
+					<div class="FeedImgBox">
+						<img th:src="@{/images/동료.png}" alt="피드 이미지" />
+					</div>
+				</div>
+			</div>
+
+			<div class="FeedList">
+				<div class="FeedItem">
+					<div class="FeedCompany">
+						<h2>삼성</h2>
+					</div>
+
+					<div class="FeedDetail">
+						<span class="DetailCompany">기업이름</span>
+						<h3 class="DetailTitle">제목제목제목제목제목제목제목제목제목제목</h3>
+						<span class="DeatailAgo">20분전</span>
+					</div>
+
+					<div class="FeedImgBox">
+						<img th:src="@{/images/동료.png}" alt="피드 이미지" />
+					</div>
+				</div>
+			</div>
+
+			<div class="FeedList">
+				<div class="FeedItem">
+					<div class="FeedCompany">
+						<h2>삼성</h2>
+					</div>
+
+					<div class="FeedDetail">
+						<span class="DetailCompany">기업이름</span>
+						<h3 class="DetailTitle">제목제목제목제목제목제목제목제목제목제목</h3>
+						<span class="DeatailAgo">20분전</span>
+					</div>
+
+					<div class="FeedImgBox">
+						<img th:src="@{/images/동료.png}" alt="피드 이미지" />
+					</div>
+				</div>
+			</div>
+
+			<div class="FeedList">
+				<div class="FeedItem">
+					<div class="FeedCompany">
+						<h2>삼성</h2>
+					</div>
+
+					<div class="FeedDetail">
+						<span class="DetailCompany">기업이름</span>
+						<h3 class="DetailTitle">제목제목제목제목제목제목제목제목제목제목</h3>
+						<span class="DeatailAgo">20분전</span>
+					</div>
+
+					<div class="FeedImgBox">
+						<img th:src="@{/images/동료.png}" alt="피드 이미지" />
+					</div>
+				</div>
+			</div>
+
+			<div class="FeedList">
+				<div class="FeedItem">
+					<div class="FeedCompany">
+						<h2>삼성</h2>
+					</div>
+
+					<div class="FeedDetail">
+						<span class="DetailCompany">기업이름</span>
+						<h3 class="DetailTitle">제목제목제목제목제목제목제목제목제목제목</h3>
+						<span class="DeatailAgo">20분전</span>
+					</div>
+
+					<div class="FeedImgBox">
+						<img th:src="@{/images/동료.png}" alt="피드 이미지" />
+					</div>
+				</div>
+			</div>
+
+			<div class="FeedList">
+				<div class="FeedItem">
+					<div class="FeedCompany">
+						<h2>삼성</h2>
+					</div>
+
+					<div class="FeedDetail">
+						<span class="DetailCompany">기업이름</span>
+						<h3 class="DetailTitle">제목제목제목제목제목제목제목제목제목제목</h3>
+						<span class="DeatailAgo">20분전</span>
+					</div>
+
+					<div class="FeedImgBox">
+						<img th:src="@{/images/동료.png}" alt="피드 이미지" />
+					</div>
+				</div>
+			</div>
+
+			<div class="FeedList">
+				<div class="FeedItem">
+					<div class="FeedCompany">
+						<h2>삼성</h2>
+					</div>
+
+					<div class="FeedDetail">
+						<span class="DetailCompany">기업이름</span>
+						<h3 class="DetailTitle">제목제목제목제목제목제목제목제목제목제목</h3>
+						<span class="DeatailAgo">20분전</span>
+					</div>
+
+					<div class="FeedImgBox">
+						<img th:src="@{/images/동료.png}" alt="피드 이미지" />
+					</div>
+				</div>
+			</div>
+
+			<div class="FeedList">
+				<div class="FeedItem">
+					<div class="FeedCompany">
+						<h2>삼성</h2>
+					</div>
+
+					<div class="FeedDetail">
+						<span class="DetailCompany">기업이름</span>
+						<h3 class="DetailTitle">제목제목제목제목제목제목제목제목제목제목</h3>
+						<span class="DeatailAgo">20분전</span>
+					</div>
+
+					<div class="FeedImgBox">
+						<img th:src="@{/images/동료.png}" alt="피드 이미지" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="bookmarkList">
+			<h2 class="companyListTItle">기업 목록</h2>
+			<div class="companyAdd">
+				<span>+ 기업 추가</span>
+				<div class="AddIconBox">
+					<span class="sortIcon">
+						<i class="fa-solid fa-arrow-down-a-z"></i>
+					</span>
+
+					<span class="optionIcon">
+						<i class="fa-solid fa-gear"></i>
+					</span>
+				</div>
+			</div>
+
+			<div class="sortModal">
+				<p>최신 순</p>
+				<p>등록 순</p>
+				<p>가나다 순</p>
+				<p>다나가 순</p>
+			</div>
+
+			<div class="optionModal">
+				<h2 class="optionTitle">기업 목록</h2>
+
+				<div class="optionList">
+					<span class="delete">삭제</span>
+					<span class="move">그룹이동</span>
+					<span class="complete">완료</span>
+				</div>
+
+				<div class="optionComList">
+					<input class="optionChe" type="checkbox" />
+					<span class="optionCompany">기업이름</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script th:inline="javascript">
+		document.addEventListener("DOMContentLoaded", function () {
+
+			newgroup.addEventListener("click", () => {
+				console.log("click")
+				newgroupModal.style.display = "block";
+			});
+		});
+	</script>
+
+</body>
+
 </html>

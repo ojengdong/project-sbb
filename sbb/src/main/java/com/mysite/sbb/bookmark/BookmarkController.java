@@ -23,15 +23,10 @@ public class BookmarkController {
     public void addBookmark(@RequestBody Bookmark bookmarkDto) {
         bookmarkService.addBookmark(bookmarkDto);
     }
-    
-    @GetMapping("/bookmark_form")
-    public String showBookmarkPage(Model model) {
-        return "bookmark_form";
-    }
 
     @GetMapping("/bookmarks")
     public String getAllBookmarks() {
-        return "/api/bookmark_form";
+        return "bookmark_form";
     }
 }
 
