@@ -252,16 +252,20 @@
 		</div>
 	</div>
 
-	<script th:inline="javascript">
-		document.addEventListener("DOMContentLoaded", function () {
+	<script>
+		document.addEventListener("DOMContentLoaded", () => {
+			console.log("Page loaded");
+
+			var newgroup = document.querySelector(".newGroup");
+			var newgroupModal = document.querySelector(".newGroupModal");
 
 			newgroup.addEventListener("click", () => {
-				console.log("click")
+				console.log("Click")
 				newgroupModal.style.display = "block";
 			});
 		});
-	</script>
 
+	</script>
 </body>
 
 </html>
