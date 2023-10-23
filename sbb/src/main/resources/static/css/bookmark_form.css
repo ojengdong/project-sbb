@@ -75,6 +75,11 @@ li{
 
 .newGroup {
 	margin-right: 8px;
+	width: 140px;
+	height: 40px;
+	font-size: 18px;
+	background-color: transparent;
+	border: none;
 }
 
 .groupListBox {
@@ -180,9 +185,13 @@ li{
 	border: 2px solid black;
 	border-radius: 10px;
 	width: 450px;
-	height: 200px;
+	height: 250px;
 	text-align: center;
 	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 .addTitle {
@@ -211,24 +220,34 @@ li{
 
 .addBtn{
 	width: 100%;
-	height: 40px;
+	height: 80px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	flex-direction: column;
+}
+
+.checkBtn{
+	width: 250px;
+	height: 50px;
+	background-color: dodgerblue;
+	border: none;
+	color: #fff;
+	margin-bottom: 10px;
+}
+
+.addBtnClose{
+	width: 250px;
+	height: 50px;
+	background-color: gray;
+	border: none;
+	color: #fff;
 }
 
 .boomarkFeed {
 	border: 2px solid black;
 	width: 1000px;
 	margin: 0 auto;
-}
-
-.addBtnClose{
-	width: 250px;
-	height: 35px;
-	background-color: gray;
-	border: none;
-	color: #fff;
 }
 
 .FeedTitleBox {
@@ -291,7 +310,7 @@ li{
 	padding: 8px;
 }
 
-.companyAdd {
+.companyAddBox {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -309,6 +328,55 @@ li{
 	margin-right: 0;
 }
 
+.companyAddModal{
+	border: 2px solid black;
+	width: 450px;
+	height: 350px;
+	position: absolute;
+	top: 60%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: none;
+}
+
+.AddModalTitle{
+	display: flex;
+	justify-content: center;
+}
+
+.companySearch{
+	border: 2px solid black;
+	border-radius: 10px;
+	width: 350px;
+	height: 40px;
+	margin: 0 auto;
+	padding: 5px 8px;
+}
+
+.companySearch input{
+	width: 250px;
+	height: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.companyBtnBox{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.companyBtnClose{
+	width: 250px;
+	height: 40px;
+	border: none;
+	border-radius: 5px;
+	background-color: gray;
+	color: #fff;
+	font-size: 18px;
+}
+
 .sortModal {
 	border: 2px solid gray;
 	border-radius: 8px;
@@ -318,6 +386,13 @@ li{
 	flex-direction: column;
 	width: 150px;
 	display: none;
+}
+
+.sortModal span{
+	display: flex;
+	justify-content: end;
+	margin: 8px;
+	cursor: pointer;
 }
 
 .sortModal p {
@@ -363,7 +438,7 @@ li{
 
 .move {
 	color: gray;
-}non
+}
 
 .complete {
 	color: dodgerblue;

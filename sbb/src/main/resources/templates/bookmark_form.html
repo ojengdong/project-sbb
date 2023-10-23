@@ -98,6 +98,7 @@
 					<input type="text" value="기본 그룹" />
 				</div>
 				<div class="addBtn">
+					<button type="button" class="checkBtn">확인</button>
 					<button type="button" class="addBtnClose">닫기</button>
 				</div>
 			</div>
@@ -127,8 +128,8 @@
 
 		<div class="bookmarkList">
 			<h2 class="companyListTItle">기업 목록</h2>
-			<div class="companyAdd">
-				<span>+ 기업 추가</span>
+			<div class="companyAddBox">
+				<span class="companyAdd">+ 기업 추가</span>
 				<div class="AddIconBox">
 					<span class="sortIcon">
 						<i class="fa-solid fa-arrow-down-a-z"></i>
@@ -139,8 +140,24 @@
 					</span>
 				</div>
 			</div>
+			
+			<div class="companyAddModal">
+				<h1 class="AddModalTitle">기업추가</h1>
+				
+				<div class="companySearch">
+					<input type="text" />
+				</div>
+				
+				<ul class="companyList">
+					<li class="companyItem"></li>
+				</ul>
+				<div class="companyBtnBox">
+					<button type="button" class="companyBtnClose">닫기</button>
+				</div>
+			</div>
 
 			<div class="sortModal">
+				<span>X</span>
 				<p>최신 순</p>
 				<p>등록 순</p>
 				<p>가나다 순</p>
@@ -191,7 +208,42 @@
 		addModalClose.addEventListener("click", function () {
 			addModal.style.display = "none";
 		})
+		
+		const companyAddOpen = document.querySelector(".companyAdd");
+		const companyModal = document.querySelector(".companyAddModal");
+		const companyClose = document.querySelector(".companyBtnClose")
 
+		companyAddOpen.addEventListener("click", function () {
+			companyModal.style.display = "block";
+		})
+
+		companyClose.addEventListener("click", function () {
+			companyModal.style.display = "none";
+		})
+		
+		const sortOpen = document.querySelector(".sortIcon i");
+		const sortModal = document.querySelector(".optionModal");
+		const sortClose = document.querySelector(".sortModal span");
+		
+		sortOpen.addEventListener("click", function () {
+			sortModal.style.display = "block";
+		})
+		
+		sortClose.addEventListener("click", function () {
+			sortModal.style.display = "none";
+		})
+		
+		const optionOpen = document.querySelector(".optionIcon i");
+		const optionModal = document.querySelector(".optionModal");
+		const optionClose = document.querySelector(".optionTitle");
+		
+		optionOpen.addEventListener("click", function () {
+			optionModal.style.display = "block";
+		})
+		
+		optionClose.addEventListener("click", function () {
+			optionModal.style.display = "none";
+		})
 	</script>
 </body>
 
