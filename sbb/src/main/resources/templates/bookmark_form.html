@@ -1,24 +1,68 @@
 <!DOCTYPE html>
-<html lang="kr" layout:decorate="~{layout}">
+<html lang="kr">
 
 <head>
 	<meta charset="UTF-8" />
 	<title>book page</title>
 	<link rel="stylesheet" type="text/css" th:href="@{/css/bookmark_form.css}">
-	<link rel="stylesheet" type="text/css" th:href="@{/css/navbar.css}">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 		integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
 		crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-	<div class="bookmarkWrap" layout:fragment="content">
+	<nav class="container-fluid">
+		<div class="logoIdBox">
+			<div>
+				<a class="navbar-brand" href="/"><img th:src="@{/images/logo.png}" alt="로고이미지" width="50px" /></a>
+			</div>
+			<div class="userId">
+				<!--<span>Welcome, [[@{#authentication.username}]]</span>-->
+				<span class="author-dsiplay"></span>
+				<span>님 환영합니다.</span>
+			</div>
+		</div>
+		<ul class="navList">
+			<!-- 로그인 -->
+			<li class="nav-item">
+				<a class="nav-link" th:href="@{/user/login}">Log in</a>
+			</li>
+			<!-- 로그아웃 -->
+			<li class="nav-item">
+				<a class="nav-link" th:href="@{/user/logout}">Log out</a>
+			</li>
+			<!-- Hide the "Sign up" link when the user is authenticated -->
+			<!-- 회원가입 -->
+			<li class="nav-item">
+				<a class="nav-link" th:href="@{/user/signup}">Sign up</a>
+			</li>
+
+			<!-- Q&A -->
+			<li class="nav-item">
+				<a class="nav-link" th:href="@{/question/list}">Q&A</a>
+			</li>
+
+			<!-- 이메일 -->
+			<li class="nav-item">
+				<a class="nav-link" th:href="@{/email}">Email</a>
+			</li>
+
+			<!-- 주식 -->
+			<li class="nav-item">
+				<a class="nav-link" th:href="@{/loadStockInfo}">Stock Info</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" th:href="@{/dart}">DART</a>
+			</li>
+		</ul>
+	</nav>
+	<div class="bookmarkWrap">
 		<div class="bookmarkGroupBox">
 			<h4 class="groupTitle">북마크 그룹</h4>
 
 			<div class="groupAdd">
 				<button type="button" class="newGroup">+ 그룹추가</button>
-				<span class="groupAddIcon"><i class="fa-solid fa-gear" style="color: #829ac4;"></i></span>
+				<span class="groupAddIcon"><i class="fa-solid fa-gear"></i></span>
 			</div>
 
 			<div class="groupListBox">
@@ -27,24 +71,35 @@
 				</ul>
 			</div>
 
-
 			<div class="newGroupModal">
-				<div class="newModalTxt">
-					<h4 class="newTitle">새 그룹</h4>
-					<p class="deleteTxt">X</p>
+				<div class="newTitleDel">
+					<div class="newModalTxt">
+						<h4 class="newTitle">새 그룹</h4>
+					</div>
 				</div>
 
 				<div class="newInpBox">
 					<input type="text" class="newInp" placeholder="그룹 명" />
 				</div>
-
-				<button type="button" class="newBtn">추가</button>
+				
+				<div class="newModalBtnBox">
+					<button type="button" class="newBtn">추가</button>
+					
+				</div>
+				<div class="newModalCloseBtn">
+					<button type="button" class="closeBtn">닫기</button>
+				</div>
 			</div>
 
 
 			<div class="groupAddIconModal">
 				<h4 class="addTitle">그룹 설정</h4>
-				<input type="text" value="기본 그룹" />
+				<div class="addInpBox">
+					<input type="text" value="기본 그룹" />
+				</div>
+				<div class="addBtn">
+					<button type="button" class="addBtnClose">닫기</button>
+				</div>
 			</div>
 		</div>
 
@@ -68,151 +123,8 @@
 					</div>
 				</div>
 			</div>
-
-			<div class="FeedList">
-				<div class="FeedItem">
-					<div class="FeedCompany">
-						<h2>삼성</h2>
-					</div>
-
-					<div class="FeedDetail">
-						<span class="DetailCompany">기업이름</span>
-						<h3 class="DetailTitle">제목제목제목제목제목제목제목제목제목제목</h3>
-						<span class="DeatailAgo">20분전</span>
-					</div>
-
-					<div class="FeedImgBox">
-						<img th:src="@{/images/동료.png}" alt="피드 이미지" />
-					</div>
-				</div>
-			</div>
-
-			<div class="FeedList">
-				<div class="FeedItem">
-					<div class="FeedCompany">
-						<h2>삼성</h2>
-					</div>
-
-					<div class="FeedDetail">
-						<span class="DetailCompany">기업이름</span>
-						<h3 class="DetailTitle">제목제목제목제목제목제목제목제목제목제목</h3>
-						<span class="DeatailAgo">20분전</span>
-					</div>
-
-					<div class="FeedImgBox">
-						<img th:src="@{/images/동료.png}" alt="피드 이미지" />
-					</div>
-				</div>
-			</div>
-
-			<div class="FeedList">
-				<div class="FeedItem">
-					<div class="FeedCompany">
-						<h2>삼성</h2>
-					</div>
-
-					<div class="FeedDetail">
-						<span class="DetailCompany">기업이름</span>
-						<h3 class="DetailTitle">제목제목제목제목제목제목제목제목제목제목</h3>
-						<span class="DeatailAgo">20분전</span>
-					</div>
-
-					<div class="FeedImgBox">
-						<img th:src="@{/images/동료.png}" alt="피드 이미지" />
-					</div>
-				</div>
-			</div>
-
-			<div class="FeedList">
-				<div class="FeedItem">
-					<div class="FeedCompany">
-						<h2>삼성</h2>
-					</div>
-
-					<div class="FeedDetail">
-						<span class="DetailCompany">기업이름</span>
-						<h3 class="DetailTitle">제목제목제목제목제목제목제목제목제목제목</h3>
-						<span class="DeatailAgo">20분전</span>
-					</div>
-
-					<div class="FeedImgBox">
-						<img th:src="@{/images/동료.png}" alt="피드 이미지" />
-					</div>
-				</div>
-			</div>
-
-			<div class="FeedList">
-				<div class="FeedItem">
-					<div class="FeedCompany">
-						<h2>삼성</h2>
-					</div>
-
-					<div class="FeedDetail">
-						<span class="DetailCompany">기업이름</span>
-						<h3 class="DetailTitle">제목제목제목제목제목제목제목제목제목제목</h3>
-						<span class="DeatailAgo">20분전</span>
-					</div>
-
-					<div class="FeedImgBox">
-						<img th:src="@{/images/동료.png}" alt="피드 이미지" />
-					</div>
-				</div>
-			</div>
-
-			<div class="FeedList">
-				<div class="FeedItem">
-					<div class="FeedCompany">
-						<h2>삼성</h2>
-					</div>
-
-					<div class="FeedDetail">
-						<span class="DetailCompany">기업이름</span>
-						<h3 class="DetailTitle">제목제목제목제목제목제목제목제목제목제목</h3>
-						<span class="DeatailAgo">20분전</span>
-					</div>
-
-					<div class="FeedImgBox">
-						<img th:src="@{/images/동료.png}" alt="피드 이미지" />
-					</div>
-				</div>
-			</div>
-
-			<div class="FeedList">
-				<div class="FeedItem">
-					<div class="FeedCompany">
-						<h2>삼성</h2>
-					</div>
-
-					<div class="FeedDetail">
-						<span class="DetailCompany">기업이름</span>
-						<h3 class="DetailTitle">제목제목제목제목제목제목제목제목제목제목</h3>
-						<span class="DeatailAgo">20분전</span>
-					</div>
-
-					<div class="FeedImgBox">
-						<img th:src="@{/images/동료.png}" alt="피드 이미지" />
-					</div>
-				</div>
-			</div>
-
-			<div class="FeedList">
-				<div class="FeedItem">
-					<div class="FeedCompany">
-						<h2>삼성</h2>
-					</div>
-
-					<div class="FeedDetail">
-						<span class="DetailCompany">기업이름</span>
-						<h3 class="DetailTitle">제목제목제목제목제목제목제목제목제목제목</h3>
-						<span class="DeatailAgo">20분전</span>
-					</div>
-
-					<div class="FeedImgBox">
-						<img th:src="@{/images/동료.png}" alt="피드 이미지" />
-					</div>
-				</div>
-			</div>
 		</div>
+
 		<div class="bookmarkList">
 			<h2 class="companyListTItle">기업 목록</h2>
 			<div class="companyAdd">
@@ -253,17 +165,32 @@
 	</div>
 
 	<script>
-		document.addEventListener("DOMContentLoaded", () => {
-			console.log("Page loaded");
+		const groupBtnOpen = document.querySelector(".newGroup");
+		const groupModal = document.querySelector(".newGroupModal");
+		const groupModalClose = document.querySelector(".closeBtn");
 
-			var newgroup = document.querySelector(".newGroup");
-			var newgroupModal = document.querySelector(".newGroupModal");
-
-			newgroup.addEventListener("click", () => {
-				console.log("Click")
-				newgroupModal.style.display = "block";
-			});
+		console.log(groupModal);
+		groupBtnOpen.addEventListener("click", function () {
+			console.log(groupBtnOpen + "Click");
+			groupModal.style.display = "block";
 		});
+
+		groupModalClose.addEventListener("click", function () {
+			console.log(groupModalClose + "Click");
+			groupModal.style.display = "none";
+		});
+
+		const addModal = document.querySelector(".groupAddIconModal");
+		const addModalOpen = document.querySelector(".groupAddIcon");
+		const addModalClose = document.querySelector(".addBtnClose");
+
+		addModalOpen.addEventListener("click", function () {
+			addModal.style.display = "block";
+		})
+
+		addModalClose.addEventListener("click", function () {
+			addModal.style.display = "none";
+		})
 
 	</script>
 </body>

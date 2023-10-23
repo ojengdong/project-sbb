@@ -1,33 +1,17 @@
 package com.mysite.sbb.bookmark;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-import org.springframework.ui.Model;
-
-
-import java.util.List;
+import ch.qos.logback.core.model.Model;
 
 @Controller
-@RequestMapping("/api")
 public class BookmarkController {
 
-    private final BookmarkService bookmarkService;
-
-    @Autowired
-    public BookmarkController(BookmarkService bookmarkService) {
-        this.bookmarkService = bookmarkService;
-    }
-
-    @PostMapping("/bookmarks")
-    public void addBookmark(@RequestBody Bookmark bookmarkDto) {
-        bookmarkService.addBookmark(bookmarkDto);
-    }
-
-    @GetMapping("/bookmarks")
-    public String getAllBookmarks() {
+    @RequestMapping("/bookmarks")
+    public String bookmarks(Model model) {
         return "bookmark_form";
     }
 }
+
 

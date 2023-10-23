@@ -10,8 +10,6 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 		integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
 		crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<meta name="_csrf" th:content="${_csrf.token}" />
-	<meta name="_csrf_header" th:content="${_csrf.headerName}" />
 </head>
 
 
@@ -95,7 +93,7 @@
 				<label for="bookmarkPageLabel">
 					<div id="bookmarkPageDiv" class="bookmarkTitleBox">
 						<h2 class="bookmarkTitle">북마크</h2>
-						<a id="bookmarkPageLink" th:href="@{/api/bookmarks}" class="bookmarkTitleIcon"><i
+						<a id="bookmarkPageLink" th:href="@{/bookmarks}" class="bookmarkTitleIcon"><i
 								class="fa-solid fa-chevron-right"></i></a>
 					</div>
 				</label>
@@ -400,125 +398,46 @@
 
 			return listItem;
 		}
+		
+		// 새로운 북마크를 서버에 추가
+		function addBookmark(bookmark) {
+			// Get the current list of bookmarks from local storage
+			var bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
 
-		window.onload = function () {
-			updateBookmark();
+			// Add the new bookmark to the list
+			bookmarks.push(bookmark);
+
+			// Save the updated list back to local storage
+			localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+			
 			displayBookmarks();
 		}
 
-		function updateBookmark() {
-			var bookmarks = JSON.parse(localStorage.getItem("bookmarks")) || [];
-			var addBookmarkSection = document.querySelector('#addBookmarkSection');
-
-			// 북마크가 이미 있으면 '북마크 추가' 섹션을 숨김
-			if (bookmarks.length > 0 && addBookmarkSection) {
-				addBookmarkSection.style.display = 'none';
-			} else if (addBookmarkSection) { // 모든 북마크가 삭제되었다면 '북마크 추가' 섹션을 다시 보여줌
-				addBookmarkSection.style.display = '';
-			}
-		}
-
-		// 새로운 북마크를 서버에 추가
-		function addBookmark(bookmark) {
-			// '/api/bookmarks' 엔드포인트로 POST요청을 보냄
-			// 이 요청은 새로운 북마크 정보를 JSON 형식으로 포함
-			fetch('/api/bookmarks', {
-				method: 'POST',
-				headers: {'Content-Type': 'application/json'},
-				body: JSON.stringify(bookmark)
-			})
-				.then(function (response) {
-					if (!response.ok) throw new Error("요청 실패");
-					return response.json();
-				})
-				.then(function (data) {
-					console.log('북마크가 추가되었습니다.');
-
-
-				})
-				.catch(function (error) {
-					console.error(error);
-				})
-
-			
-		}
-		// 북마크 객체 생성
-			var bookmark = {
-				name: "북마크",
-				url: "https://example.com"
-			};
-
-			// 함수 호출하여 북마크 추가
-			addBookmark(bookmark);
-
-		// 서버에서 모든 북마크 정보를 가져옴
-		function getAllBookmarks() {
-			fetch('/api/bookmarks')
-				.then(function (response) {
-					if (response.ok) throw new Error("요청 실패");
-					return response.json();
-				})
-				.then(function (data) {
-					console.log("검색된 북마크 : ", data);
-
-					data.forEach((bookmark, index) => {
-						console.log(`Bookmark ${index + 1} : ${bookmark.name}`);
-					});
-
-				})
-				.catch(function (error) {
-					console.error(error);
-				});
-		}
-
-		// 로컬 스토리지에 저장된 모든 북마크를 정보를 화면에 표시함
-		function displayBookmarks() {
-			var bookmarks = JSON.parse(localStorage.getItem("bookmarks")) || [];
-
-			var bookmarkList = document.getElementById('bookmark-list');
-
-			bookmarkList.innerHTML = '';
-
-			bookmarks.forEach(function (bookmark) {
-				var listItem = document.createElement('li');
-				listItem.textContent = bookmark;
-
-				listItem.addEventListener('click', function (e) {
-					removeBookmark(e.target.textContent);
-				});
-
-				bookmarkList.appendChild(listItem);
-			});
-
-			// 북마크가 있다면 아이콘 색상 변경
-			if (bookmarks.length > 0) {
-				document.querySelector('.bookmark-icon').style.color = 'blue';
-			}
-		}
 
 		function removeBookmark(bookmarkName) {
-			var bookmarks = JSON.parse(localStorage.getItem("bookmarks")) || [];
+			// Get the current list of bookmarks from local storage
+			var bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
 
 			if (bookmarks.includes(bookmarkName)) {
+				// Remove the bookmark at the given index from the list
 				bookmarks.splice(bookmarks.indexOf(bookmarkName), 1);
-
-				localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
 
 				alert(`${bookmarkName} 삭제 되었습니다.`);
 
-				updateBookmark();
-				displayBookmarks();
-
-				// 다시 최신의 북마크 리스트를 가져옴
-				bookmarks = JSON.parse(localStorage.getItem("bookmarks")) || [];
-
-				// 북마크가 모두 삭제되었다면 아이콘 색상 변경
-				if (bookmarks.length === 0) {
-					document.querySelector('.bookmark-icon').style.color = 'black';
-				}
+			} else {
+				alert(`북마크 ${bookmarkName}이(가) 존재하지 않습니다.`);
+				return;
 			}
+
+			// Save the updated list back to local storage 
+			localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+			
+			displayBookmarks();
 		}
 
+		function getAllBookmarks() {
+			return JSON.parse(localStorage.getItem('bookmarks')) || [];
+		}
 
 		// 특정 위치의 상태(즐겨찾기 된 상태와 그렇지 않은 상태 사이의 전환)
 		// 변경하는 역할
@@ -535,27 +454,37 @@
 			var bookmarks = JSON.parse(localStorage.getItem("bookmarks")) || [];
 
 			if (bookmarks.includes(placeName)) {
-				bookmarks.splice(bookmarks.indexOf(placeName), 1);
-
+				removeBookmark(placeName);
 				placeNameElement.classList.remove('selected');
 
-				alert(`${placeName} 삭제 되었습니다.`);
-
 			} else {
-				bookmarks.push(placeName);
-
-
+				addBookmark(placeName);
 				placeNameElement.classList.add('selected');
 
 				alert(`${placeName} 추가 되었습니다.`);
+			}
+		}
 
+		function displayBookmarks() {
+			var bookmarks = getAllBookmarks();
+			var bookmarkListElement = document.getElementById('bookmark-list');
+
+			// 기존의 모든 리스트 항목들을 삭제
+			while (bookmarkListElement.firstChild) {
+				bookmarkListElement.removeChild(bookmarkListElement.firstChild);
 			}
 
-			localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+			// 각각의 북마크에 대한 리스트 항목 생성 후 추가
+			bookmarks.forEach(function (bookmark) {
+				var listItem = document.createElement('li');
+				listItem.textContent = bookmark;
+				bookmarkListElement.appendChild(listItem);
+				if (bookmarks.length > 0) {
+					addBookmarkSection.style.display = 'none';
 
-			updateBookmark();
-
-			displayBookmarks();
+					addBookmarkSection.style.height = `${bookmarks.length * 100}%`;
+				}
+			});
 		}
 
 
