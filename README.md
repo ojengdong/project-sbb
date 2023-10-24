@@ -5,25 +5,29 @@
 * 23.09 ~ 23.10
 <table>
  <tr>
-    <td rowspan="5"align="center">개발기간</td>
+    <td rowspan="6"align="center">개발기간</td>
     <td>2023.09.11 ~ 2023.09.12</td>
     <td>프로젝트 설계(프로세스정의서 ERD등)</td>
   </tr>
   <tr>
-    <td>2023.09.15 ~ 2023.09.16</td>
-    <td>설계자료 취합, 수정 및 보완 <br> 피그마 설계</td>
+    <td>2023.09.12 ~ 2023.09.12</td>
+    <td>설계자료 취합, 수정 및 보완</td>
   </tr>
   <tr>
-    <td>2023.09.17 ~ 2023.09.18</td>
+    <td>2023.09.14 ~ 2023.09.14</td>
     <td>DB 설정(H2 Database) <br> 프레임워크(Javascript,JAVA17,Springboot) <br> 빌드 툴(Gradle)</td>
   </tr>
+   <tr>
+    <td>2023.09.14 ~ 2023.09.19</td>
+    <td>DB UI스타일링 <br> 화면설계 <br> HTML,CSS레이아웃 코딩</td>
+  </tr>
   <tr>
-    <td>2023.09.19 ~ 2023.09.24</td>
+    <td>2023.09.19 ~ 2023.10.06</td>
     <td>개인 분담 프로그래밍</td>
   </tr>
   <tr>
-    <td>2023.09.25 ~ 2023.09.26</td>
-    <td>프로그램 취합 <br> UI framework 및 CSS 보완 <br> 완보고서 작성</td>
+    <td>2023.10.10 ~ 2023.10.22</td>
+    <td></td>
   </tr>
 </table>
 
