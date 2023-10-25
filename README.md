@@ -84,4 +84,9 @@
 <img src="https://github.com/ojengdong/project-sbb/assets/121204970/1d685ecc-ebb2-4d42-8a0b-302a15b6c7eb" width="400">
 <img src="https://github.com/ojengdong/project-sbb/assets/121204970/9d5a2b6b-b27b-4793-aa52-31b5d94ed99b" width="400">
 
-### ✔️ Q&A 화면면
+### ✔️ Q&A 화면
+<img src="https://github.com/ojengdong/project-sbb/assets/121204970/49740948-1d59-4152-88c7-c17a9447887f" width="400">
+<img src="https://github.com/ojengdong/project-sbb/assets/121204970/0300485d-1dc5-4893-91fb-5a2550bcdd5e" width="400">
+<img src="https://github.com/ojengdong/project-sbb/assets/121204970/757f0dbf-911e-4940-a3f1-e243e47d94d9" width="400">
+<img src="https://github.com/ojengdong/project-sbb/assets/121204970/825077e1-3439-4d5d-afc4-209f30ffd5ee" width="400">
+
