@@ -14,7 +14,7 @@
     <td>설계자료 취합, 수정 및 보완</td>
   </tr>
   <tr>
-    <td>2023.09.14 ~ 2023.09.14</td>
+    <td>2023.09.13 ~ 2023.09.14</td>
     <td>DB 설정(H2 Database) <br> 프레임워크(Javascript,JAVA17,Springboot) <br> 빌드 툴(Gradle)</td>
   </tr>
    <tr>
