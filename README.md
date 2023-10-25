@@ -76,6 +76,12 @@
   </tr>
 </table>
 
+## 개발환경 
+* 사용 언어 : JAVA, 자바스크립트
+* Framework : Springboot
+* DBMS : H2 database
+* Tools : SpringtoolSuite 4
+
 ## Preview
 ### ✔️메인화면
 ![project-sbb](https://github.com/ojengdong/project-sbb/assets/121204970/2d62840b-2859-4c7f-8559-b6fbd3be8069)
