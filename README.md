@@ -81,4 +81,4 @@
 ![project-sbb](https://github.com/ojengdong/project-sbb/assets/121204970/2d62840b-2859-4c7f-8559-b6fbd3be8069)
 
 ### ✔️ 로그인 / 회원가입 페이지
-
+![스크린샷 2023-10-25 155815](https://github.com/ojengdong/project-sbb/assets/121204970/0aa8df80-3964-42d9-ad81-5d41243094f8)
