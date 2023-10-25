@@ -80,4 +80,6 @@
 ### ✔️메인화면
 ![project-sbb](https://github.com/ojengdong/project-sbb/assets/121204970/2d62840b-2859-4c7f-8559-b6fbd3be8069)
 
-### ✔️ 로그인 / 회원가입 페이지
+### ✔️ 로그인 / 회원가입 페이지.
+<img src="https://github.com/ojengdong/project-sbb/assets/121204970/1d685ecc-ebb2-4d42-8a0b-302a15b6c7eb" width="400">
+<img src="https://github.com/ojengdong/project-sbb/assets/121204970/9d5a2b6b-b27b-4793-aa52-31b5d94ed99b" width="400">
