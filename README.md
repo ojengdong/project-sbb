@@ -11,10 +11,10 @@
       <a href="#멤버-구성">멤버구성</a>
     </li>
     <li>
-      <a href="#%EF%B8%8F개발환경">멤버구성</a>
+      <a href="#%EF%B8%8F개발환경">개발환경</a>
     </li>
     <li>
-      <a href="#preview">멤버구성</a>
+      <a href="#preview">Preview</a>
     </li>
   </ol>
 </details>
