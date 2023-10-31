@@ -136,7 +136,8 @@
 ### ✔️피그마
 ![스크린샷 2023-10-31 181720](https://github.com/ojengdong/project-sbb/assets/121204970/f4c6d14a-d046-46cb-a7da-83e11e0c93a1)
 
-
+## View more
+#### 더 자세한 내용을 보실려면 아래 pdf파일을 참고하세요.
 
 
 
