@@ -131,5 +131,12 @@
 ### ✔️ Stock Info 화면
 ![스크린샷 2023-10-25 210223](https://github.com/ojengdong/project-sbb/assets/121204970/bdd40913-89b9-46ab-9776-49e93cbba462)
 
+<br><br>
+
+### ✔️피그마
+![스크린샷 2023-10-31 181720](https://github.com/ojengdong/project-sbb/assets/121204970/f4c6d14a-d046-46cb-a7da-83e11e0c93a1)
+
+
+
 
 
